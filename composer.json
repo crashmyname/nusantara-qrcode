@@ -1,0 +1,21 @@
+{
+    "name": "nusantara/qrcode",
+    "description": "A simple PHP QR Code generation library, wrapper around endroid/qr-code.",
+    "type": "library",
+    "require": {
+        "endroid/qr-code": "5.1.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Nusantara\\Qrcode\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Fadli Azka Prayogi",
+            "email": "fadliazkaprayogi1@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
