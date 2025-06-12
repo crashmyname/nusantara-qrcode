@@ -3,7 +3,7 @@
         'name' => 'nusantara/qrcode',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'c9f0657d6bd23018ea58d457581bef1f4ad7ed85',
+        'reference' => '58f082a8f797dc5dc778efd9660bd2f083f1066a',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -58,7 +58,7 @@
         'nusantara/qrcode' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c9f0657d6bd23018ea58d457581bef1f4ad7ed85',
+            'reference' => '58f082a8f797dc5dc778efd9660bd2f083f1066a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
