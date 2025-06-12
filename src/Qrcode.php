@@ -107,20 +107,20 @@ class QRCode {
             $builder = Builder::create()
                 ->data($data)
                 ->encoding(new Encoding('UTF-8'))
-                ->errorCorrectionLevel(new ErrorCorrectionLevelHigh());
+                ->errorCorrectionLevel(ErrorCorrectionLevel::High);
             
             // Re-apply common options, can refactor to a private buildBuilder method
             $builder->size($options['size'] ?? 300)
                     ->margin($options['margin'] ?? 10)
-                    ->roundBlockSizeMode(new RoundBlockSizeModeMargin());
+                    ->roundBlockSizeMode(RoundBlockSizeMode::Margin);
 
             if (isset($options['error_correction_level'])) {
                 $level = strtolower($options['error_correction_level']);
                 switch ($level) {
-                    case 'low': $builder->errorCorrectionLevel(new \Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelLow()); break;
-                    case 'medium': $builder->errorCorrectionLevel(new \Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelMedium()); break;
-                    case 'quartile': $builder->errorCorrectionLevel(new \Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelQuartile()); break;
-                    case 'high': default: $builder->errorCorrectionLevel(new \Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelHigh()); break;
+                    case 'low': $builder->errorCorrectionLevel(ErrorCorrectionLevel::Low); break;
+                    case 'medium': $builder->errorCorrectionLevel(ErrorCorrectionLevel::Medium); break;
+                    case 'quartile': $builder->errorCorrectionLevel(ErrorCorrectionLevel::Quartile); break;
+                    case 'high': default: $builder->errorCorrectionLevel(ErrorCorrectionLevel::High); break;
                 }
             }
 
