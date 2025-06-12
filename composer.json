@@ -8,7 +8,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Nusantara\\Qrcode\\": "src/"
+            "Nusantara\\QRCode\\": "src/"
         }
     },
     "authors": [

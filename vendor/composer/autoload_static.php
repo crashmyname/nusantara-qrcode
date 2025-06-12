@@ -9,7 +9,7 @@ class ComposerStaticInitf3e298b01005495f5f4a3c98b2c9914f
     public static $prefixLengthsPsr4 = array (
         'N' => 
         array (
-            'Nusantara\\Qrcode\\' => 17,
+            'Nusantara\\QRCode\\' => 17,
         ),
         'E' => 
         array (
@@ -26,7 +26,7 @@ class ComposerStaticInitf3e298b01005495f5f4a3c98b2c9914f
     );
 
     public static $prefixDirsPsr4 = array (
-        'Nusantara\\Qrcode\\' => 
+        'Nusantara\\QRCode\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
