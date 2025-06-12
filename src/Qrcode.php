@@ -3,10 +3,10 @@ namespace Nusantara\QRCode;
 
 use Endroid\QrCode\Builder\Builder;
 use Endroid\QrCode\Encoding\Encoding;
-use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelHigh;
+use Endroid\QrCode\ErrorCorrectionLevel;
 use Endroid\QrCode\Label\Label;
 use Endroid\QrCode\Logo\Logo;
-use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
+use Endroid\QrCode\RoundBlockSizeMode;
 use Endroid\QrCode\Writer\PngWriter;
 use Endroid\QrCode\Writer\WebPWriter;
 class QRCode {
@@ -33,21 +33,21 @@ class QRCode {
         $builder = Builder::create()
             ->data($data)
             ->encoding(new Encoding('UTF-8'))
-            ->errorCorrectionLevel(new ErrorCorrectionLevelHigh()); // Default ke High
+            ->errorCorrectionLevel(ErrorCorrectionLevel::High); // Default ke High
         
         // --- Konfigurasi Ukuran dan Margin ---
         $builder->size($options['size'] ?? 300)
                 ->margin($options['margin'] ?? 10)
-                ->roundBlockSizeMode(new RoundBlockSizeModeMargin()); // Opsional, bisa diatur
+                ->roundBlockSizeMode(RoundBlockSizeMode::Margin); // Opsional, bisa diatur
 
         // --- Konfigurasi Error Correction Level ---
         if (isset($options['error_correction_level'])) {
             $level = strtolower($options['error_correction_level']);
             switch ($level) {
-                case 'low': $builder->errorCorrectionLevel(new \Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelLow()); break;
-                case 'medium': $builder->errorCorrectionLevel(new \Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelMedium()); break;
-                case 'quartile': $builder->errorCorrectionLevel(new \Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelQuartile()); break;
-                case 'high': default: $builder->errorCorrectionLevel(new \Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelHigh()); break;
+                case 'low': $builder->errorCorrectionLevel(ErrorCorrectionLevel::Low); break;
+                case 'medium': $builder->errorCorrectionLevel(ErrorCorrectionLevel::Medium); break;
+                case 'quartile': $builder->errorCorrectionLevel(ErrorCorrectionLevel::Quartile); break;
+                case 'high': default: $builder->errorCorrectionLevel(ErrorCorrectionLevel::High); break;
             }
         }
 
